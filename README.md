@@ -14,11 +14,9 @@ See [tsjs-xpx-chain-sdk](https://github.com/proximax-storage/tsjs-xpx-chain-sdk)
 
 ```typescript
 import { Account, NetworkType } from "tsjs-xpx-chain-sdk";
-import { proximax } from "pxb-client/proximax";
+import { proximax } from "pxb-client";
 
-const sender = Account.createFromPrivateKey(
-    "",
-    NetworkType.TEST_NET);
+const sender = Account.createFromPrivateKey("", NetworkType.TEST_NET);
 
 // get unsigned tx
 const unsignedTx = proximax.peg(...);
@@ -36,7 +34,7 @@ const res = await http.announce(signedTx).toPromise();
 ```typescript
 import { CosmosSDK, AccAddress, PrivKeySecp256k1 } from "cosmos-client";
 import { auth, StdTx } from "cosmos-client/x/auth";
-import { proximax_bridge } from "pxb-client/proximax-bridge";
+import { proximax_bridge } from "pxb-client";
 
 const sdk = new CosmosSDK(hostURL, chainID);
 

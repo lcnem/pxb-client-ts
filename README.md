@@ -10,16 +10,25 @@ npm install --save pxb-client
 
 ### Peg
 
+See [tsjs-xpx-chain-sdk](https://github.com/proximax-storage/tsjs-xpx-chain-sdk) for details.
+
 ```typescript
+import { Account, NetworkType } from "tsjs-xpx-chain-sdk";
 import { proximax } from "pxb-client/proximax";
+
+const sender = Account.createFromPrivateKey(
+    "",
+    NetworkType.TEST_NET);
 
 // get unsigned tx
 const unsignedTx = proximax.peg(...);
 
 // sign
+const signedTx = account.sign(unsignedTx, ...);
 
 // broadcast
-
+const http = new TransactionHttp("");
+const res = await http.announce(signedTx).toPromise();
 ```
 
 ### Unpeg
@@ -43,7 +52,7 @@ const account = await auth
 
 // get unsigned tx
 const unsignedStdTx = await proximax_bridge
-  .unpeg(sdk, { ... })
+  .unpegPost(sdk, { ... })
   .then((res) => res.data);
 
 // sign

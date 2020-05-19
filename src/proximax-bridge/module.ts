@@ -3,18 +3,18 @@ import { StdTx } from "cosmos-client/x/auth";
 import { UnpegReq, RequestInvitationReq, Params } from "./types";
 import Axios from "axios";
 
-export function getParams(sdk: CosmosSDK) {
+export function parametersGet(sdk: CosmosSDK) {
   return Axios.get<Params>(`${sdk.url}/proximax_bridge/parameters`);
 }
 
-export function unpeg(sdk: CosmosSDK, req: UnpegReq) {
+export function unpegPost(sdk: CosmosSDK, req: UnpegReq) {
   return sdk.instancifyObjectWithoutAminoJSON<StdTx>(
     StdTx,
     Axios.post(`${sdk.url}/proximax_bridge/unpeg`, req)
   );
 }
 
-export function requestInvitation(sdk: CosmosSDK, req: RequestInvitationReq) {
+export function requestInvitationPost(sdk: CosmosSDK, req: RequestInvitationReq) {
   return sdk.instancifyObjectWithoutAminoJSON<StdTx>(
     StdTx,
     Axios.post(`${sdk.url}/proximax_bridge/request_invitation`, req)

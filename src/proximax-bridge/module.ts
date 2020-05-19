@@ -3,10 +3,6 @@ import { StdTx } from "cosmos-client/x/auth";
 import { UnpegReq, RequestInvitationReq, Params } from "./types";
 import Axios from "axios";
 
-/**
- * Getting the multisig address on mainchain for collateral.
- * @param sdk
- */
 export function getParams(sdk: CosmosSDK) {
   return Axios.get<Params>(`${sdk.url}/proximax_bridge/parameters`);
 }

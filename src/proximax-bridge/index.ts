@@ -1,4 +1,3 @@
-import * as proximax_bridge from "./module";
 import { codec } from "cosmos-client";
 import {
   MsgInvitationNotCosignedClaim,
@@ -8,7 +7,7 @@ import {
   MsgUnpeg
 } from "./types";
 
-export { proximax_bridge };
+export * as proximax_bridge from "./module";
 export * from "./types";
 
 codec.registerCodec(

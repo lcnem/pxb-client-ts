@@ -12,5 +12,10 @@
     "axios": "^0.19.2",
     "cosmos-client": "^0.5.3",
     "tsjs-xpx-chain-sdk": "^0.7.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.3",
+    "jest": "^26.0.1",
+    "ts-jest": "^26.0.0"
   }
 }

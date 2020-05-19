@@ -4,25 +4,25 @@ import {
   Address,
   Mosaic,
   PlainMessage,
-  NetworkType
+  NetworkType,
 } from "tsjs-xpx-chain-sdk";
 import { PegMessage } from "./peg-message";
 
 /**
  *
- * @param multisigAddress `getMultisigAddress`
+ * @param multisigAddress
  * @param mosaics
  * @param cosmosAddress
  * @param networkType
  */
-export function createPegTransaction(
+export function peg(
   multisigAddress: string,
   mosaics: Mosaic[],
   cosmosAddress: string,
   networkType: NetworkType
 ) {
   const message: PegMessage = {
-    cosmos_address: cosmosAddress
+    cosmos_address: cosmosAddress,
   };
   const json = JSON.stringify(message);
 

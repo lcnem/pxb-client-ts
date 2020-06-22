@@ -1,6 +1,6 @@
 {
   "name": "pxb-client",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
-    "cosmos-client": "^0.5.3",
+    "cosmos-client": "^0.8.2",
     "tsjs-xpx-chain-sdk": "^0.7.0"
   },
   "devDependencies": {
